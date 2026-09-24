@@ -17,6 +17,7 @@ class ProductoCreate(ProductoBase):
 
 class ProductoResponse(ProductoBase):
     id: int
+    categoria: CategoriaResponse
 
     class Config:
         from_attributes = True
