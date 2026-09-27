@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from database.database import Base, engine
 from models.categoria import Categoria
@@ -15,6 +16,14 @@ app = FastAPI(
        version="1.0.0"
 )
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.exception_handler(Exception)
 async def manejar_error_interno(request: Request, exc: Exception):
