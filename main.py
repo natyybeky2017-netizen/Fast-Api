@@ -8,22 +8,25 @@ from models.producto import Producto
 from routes.categoria import router as categoria_router
 from routes.producto import router as producto_router
 
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-       title="API Tienda de Joyas",
-       description="API para gestionar productos y categorías de una tienda de joyas.",
-       version="1.0.0"
+    title="API Tienda de Joyas",
+    description="API para gestionar productos y categorías de una tienda de joyas.",
+    version="1.0.0"
 )
 
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
+    allow_origins=["http://127.0.0.1:5500"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+Base.metadata.create_all(bind=engine)
+
 
 @app.exception_handler(Exception)
 async def manejar_error_interno(request: Request, exc: Exception):
@@ -34,12 +37,13 @@ async def manejar_error_interno(request: Request, exc: Exception):
         }
     )
 
+
 app.include_router(categoria_router)
 app.include_router(producto_router)
+
 
 @app.get("/")
 def inicio():
     return {
         "mensaje": "API de la tienda de joyas funcionando"
     }
-
