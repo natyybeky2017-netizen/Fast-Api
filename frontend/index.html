@@ -358,6 +358,392 @@
       <!-- PRODUCTOS -->
       <section class="px-margin pb-space-2xl grid grid-cols-1 sm:grid-cols-2 gap-space-lg" id="listaProductos">
       </section>
+
+      <!-- DOCUMENTACIÓN DE LA API -->
+
+<details class="w-full border-y border-[#E8E2D5]">
+
+  <summary
+    class="cursor-pointer px-margin py-space-lg text-center list-none bg-[#FAF8F5] hover:bg-[#F5F2EB]"
+  >
+    <span
+      class="font-label-md text-label-md text-primary uppercase tracking-widest font-semibold"
+    >
+      Documentación de la API
+    </span>
+
+    <p class="text-sm text-[#6E675F] mt-2">
+      Haz clic para consultar la documentación
+    </p>
+  </summary>
+
+
+  <!-- CONTENIDO DE LA DOCUMENTACIÓN -->
+
+  <div class="max-w-6xl mx-auto px-margin py-space-2xl">
+
+    <!-- TÍTULO -->
+
+    <div class="text-center mb-space-xl">
+
+      <span
+        class="font-label-sm text-label-sm text-primary uppercase tracking-[0.25em] font-semibold"
+      >
+        Documentación
+      </span>
+
+      <h2
+        class="font-headline-lg-mobile text-headline-lg-mobile text-[#1C1A17] font-light mt-2 mb-space-sm"
+      >
+        API LUMINA
+      </h2>
+
+      <p
+        class="font-body-md text-body-md text-[#6E675F] max-w-2xl mx-auto"
+      >
+        API desarrollada con FastAPI para gestionar productos y categorías
+        de la tienda LUMINA Haute Joaillerie.
+      </p>
+
+    </div>
+
+
+    <!-- PROPÓSITO DE LA API -->
+
+    <div
+      class="bg-[#F5F2EB] border border-[#E8E2D5] p-space-lg mb-space-xl"
+    >
+
+      <h3
+        class="font-headline-sm text-headline-sm text-[#1C1A17] mb-3"
+      >
+        Propósito de la API
+      </h3>
+
+      <p class="text-sm text-[#6E675F] leading-relaxed">
+        La API permite consultar, crear, modificar y eliminar productos
+        relacionados con categorías. El backend está desarrollado con
+        FastAPI, utiliza SQLAlchemy para la persistencia y SQLite como
+        base de datos relacional.
+      </p>
+
+    </div>
+
+
+    <!-- ENDPOINTS -->
+
+    <div class="mb-space-xl">
+
+      <h3
+        class="font-headline-sm text-headline-sm text-[#1C1A17] mb-space-md"
+      >
+        Endpoints disponibles
+      </h3>
+
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+
+
+        <!-- GET PRODUCTOS -->
+
+        <div
+          class="bg-white border border-[#E8E2D5] p-space-md"
+        >
+
+          <span class="text-green-700 font-semibold text-sm">
+            GET
+          </span>
+
+          <h4 class="font-semibold text-[#1C1A17] mt-1">
+            /productos
+          </h4>
+
+          <p class="text-sm text-[#6E675F] mt-2">
+            Consulta todos los productos disponibles.
+          </p>
+
+          <p class="text-xs text-[#6E675F] mt-3">
+            Respuesta: 200 OK
+          </p>
+
+        </div>
+
+
+        <!-- GET PRODUCTO POR ID -->
+
+        <div
+          class="bg-white border border-[#E8E2D5] p-space-md"
+        >
+
+          <span class="text-green-700 font-semibold text-sm">
+            GET
+          </span>
+
+          <h4 class="font-semibold text-[#1C1A17] mt-1">
+            /productos/{id}
+          </h4>
+
+          <p class="text-sm text-[#6E675F] mt-2">
+            Consulta un producto específico mediante su ID.
+          </p>
+
+          <p class="text-xs text-[#6E675F] mt-3">
+            Respuesta: 200 OK / 404 Not Found
+          </p>
+
+        </div>
+
+
+        <!-- POST -->
+
+        <div
+          class="bg-white border border-[#E8E2D5] p-space-md"
+        >
+
+          <span class="text-blue-700 font-semibold text-sm">
+            POST
+          </span>
+
+          <h4 class="font-semibold text-[#1C1A17] mt-1">
+            /productos
+          </h4>
+
+          <p class="text-sm text-[#6E675F] mt-2">
+            Crea un nuevo producto indicando sus datos y su categoría.
+          </p>
+
+          <p class="text-xs text-[#6E675F] mt-3">
+            Respuesta: 201 Created
+          </p>
+
+        </div>
+
+
+        <!-- PUT -->
+
+        <div
+          class="bg-white border border-[#E8E2D5] p-space-md"
+        >
+
+          <span class="text-yellow-700 font-semibold text-sm">
+            PUT
+          </span>
+
+          <h4 class="font-semibold text-[#1C1A17] mt-1">
+            /productos/{id}
+          </h4>
+
+          <p class="text-sm text-[#6E675F] mt-2">
+            Modifica los datos de un producto existente.
+          </p>
+
+          <p class="text-xs text-[#6E675F] mt-3">
+            Respuesta: 200 OK / 404 Not Found
+          </p>
+
+        </div>
+
+
+        <!-- DELETE -->
+
+        <div
+          class="bg-white border border-[#E8E2D5] p-space-md"
+        >
+
+          <span class="text-red-700 font-semibold text-sm">
+            DELETE
+          </span>
+
+          <h4 class="font-semibold text-[#1C1A17] mt-1">
+            /productos/{id}
+          </h4>
+
+          <p class="text-sm text-[#6E675F] mt-2">
+            Elimina un producto existente mediante su ID.
+          </p>
+
+          <p class="text-xs text-[#6E675F] mt-3">
+            Respuesta: 200 OK / 404 Not Found
+          </p>
+
+        </div>
+
+
+        <!-- CATEGORÍAS -->
+
+        <div
+          class="bg-white border border-[#E8E2D5] p-space-md"
+        >
+
+          <span class="text-green-700 font-semibold text-sm">
+            GET
+          </span>
+
+          <h4 class="font-semibold text-[#1C1A17] mt-1">
+            /categorias
+          </h4>
+
+          <p class="text-sm text-[#6E675F] mt-2">
+            Consulta las categorías disponibles para relacionarlas con
+            los productos.
+          </p>
+
+          <p class="text-xs text-[#6E675F] mt-3">
+            Respuesta: 200 OK
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- EJEMPLO DE PETICIÓN Y RESPUESTA -->
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+
+      <!-- PETICIÓN -->
+
+      <div>
+
+        <h3
+          class="font-headline-sm text-headline-sm text-[#1C1A17] mb-3"
+        >
+          Ejemplo de petición
+        </h3>
+
+        <pre
+          class="bg-[#1C1A17] text-white p-space-md overflow-x-auto text-sm leading-relaxed"
+        >{
+  "nombre": "Anillo de oro",
+  "descripcion": "Anillo elegante",
+  "precio": 1200,
+  "material": "Oro",
+  "imagen": "anillo-oro.jpg",
+  "stock": 10,
+  "id_categoria": 1
+}</pre>
+
+      </div>
+
+
+      <!-- RESPUESTA -->
+
+      <div>
+
+        <h3
+          class="font-headline-sm text-headline-sm text-[#1C1A17] mb-3"
+        >
+          Ejemplo de respuesta
+        </h3>
+
+        <pre
+          class="bg-[#1C1A17] text-white p-space-md overflow-x-auto text-sm leading-relaxed"
+        >{
+  "id": 2,
+  "nombre": "Anillo de oro",
+  "descripcion": "Anillo elegante",
+  "precio": 1200,
+  "material": "Oro",
+  "imagen": "anillo-oro.jpg",
+  "stock": 10,
+  "id_categoria": 1
+}</pre>
+
+      </div>
+
+    </div>
+
+
+    <!-- VALIDACIÓN Y RESPUESTAS HTTP -->
+
+    <div
+      class="mt-space-xl bg-[#F5F2EB] border border-[#E8E2D5] p-space-lg"
+    >
+
+      <h3
+        class="font-headline-sm text-headline-sm text-[#1C1A17] mb-3"
+      >
+        Validación y respuestas HTTP
+      </h3>
+
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-3 text-center">
+
+        <div class="bg-white border border-[#E8E2D5] p-3">
+          <strong>200</strong>
+          <p class="text-xs text-[#6E675F] mt-1">
+            OK
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#E8E2D5] p-3">
+          <strong>201</strong>
+          <p class="text-xs text-[#6E675F] mt-1">
+            Created
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#E8E2D5] p-3">
+          <strong>400</strong>
+          <p class="text-xs text-[#6E675F] mt-1">
+            Bad Request
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#E8E2D5] p-3">
+          <strong>404</strong>
+          <p class="text-xs text-[#6E675F] mt-1">
+            Not Found
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#E8E2D5] p-3">
+          <strong>422</strong>
+          <p class="text-xs text-[#6E675F] mt-1">
+            Validation
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#E8E2D5] p-3">
+          <strong>500</strong>
+          <p class="text-xs text-[#6E675F] mt-1">
+            Server Error
+          </p>
+        </div>
+
+      </div>
+
+      <p class="text-sm text-[#6E675F] mt-4">
+        Los datos de entrada son validados mediante modelos Pydantic
+        y la API devuelve códigos HTTP según el resultado de cada operación.
+      </p>
+
+    </div>
+
+
+    <!-- DOCUMENTACIÓN INTERACTIVA DE FASTAPI -->
+
+    <div class="mt-space-xl text-center">
+
+      <a
+        href="http://127.0.0.1:8000/docs"
+        target="_blank"
+        class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium"
+      >
+        Abrir documentación interactiva de FastAPI
+      </a>
+
+      <p class="text-xs text-[#6E675F] mt-3">
+        Swagger UI permite consultar y probar los endpoints directamente.
+      </p>
+
+    </div>
+
+  </div>
+
+</details>
+
       <!-- ATELIER -->
       <section class="w-full bg-[#F5F2EB] border-y border-[#E8E2D5] px-margin py-space-2xl relative overflow-hidden">
         <div class="relative z-10 max-w-xl mx-auto flex flex-col items-center text-center">
